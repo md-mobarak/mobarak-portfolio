@@ -2,26 +2,179 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.profile {
+  clip-path: polygon(
+    30% 0%,
+    70% 0%,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0% 70%,
+    0% 30%
+  );
+}
+
+/* CSS */
+.button-71 {
+  background-color: #0078d0;
+  border: 0;
+  border-radius: 56px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: system-ui, -apple-system, system-ui, "Segoe UI", Roboto, Ubuntu,
+    "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  outline: 0;
+  padding: 16px 21px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-71:before {
+  background-color: initial;
+  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+  border-radius: 125px;
+  content: "";
+  height: 50%;
+  left: 4%;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  transition: all 0.3s;
+  width: 92%;
+}
+
+.button-71:hover {
+  box-shadow: rgba(255, 255, 255, 0.2) 0 3px 15px inset,
+    rgba(0, 0, 0, 0.1) 0 3px 5px, rgba(0, 0, 0, 0.1) 0 10px 13px;
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .button-71 {
+    padding: 16px 48px;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.img-box {
+  box-shadow: 8px 9px 28px 18px rgba(7, 168, 217, 0.63);
+  -webkit-box-shadow: 8px 9px 28px 18px rgba(7, 168, 217, 0.63);
+  -moz-box-shadow: 8px 9px 28px 18px rgba(7, 168, 217, 0.63);
+}
+/* App.css or your custom CSS file */
+@keyframes move {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(50px, 50px); /* Adjust values as needed */
+  }
+  50% {
+    transform: translate(100px, 0);
+  }
+  75% {
+    transform: translate(50px, -50px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.animate-move {
+  animation: move 5s infinite linear;
+  /* Adjust the duration and timing function as needed */
+}
+
+/* styles/globals.css or styles/ScrollTopButton.css */
+.scroll-top-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: none;
+}
+
+.scroll-top-button button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+.scroll-top-button button:hover {
+  background-color: #2980b9;
+}
+
+.card {
+  box-shadow: -12px 11px 30px 13px rgba(5, 232, 210, 0.75);
+  -webkit-box-shadow: -12px 11px 30px 13px rgba(5, 232, 210, 0.75);
+  -moz-box-shadow: -12px 11px 30px 13px rgba(5, 232, 210, 0.75);
+}
+
+/* Add this to your existing styles */
+.react-scrollspy--active {
+  color: #ff0000; /* Set your desired active link color */
+}
+
+/* profile card css  */
+
+@keyframes pulse {
+  0%,
+  100% {
+    border-image-source: linear-gradient(
+      45deg,
+      #4caf50,
+      #2196f3,
+      #f44336,
+      #ff9800
+    );
+  }
+  25% {
+    border-image-source: linear-gradient(
+      45deg,
+      #2196f3,
+      #f44336,
+      #ff9800,
+      #4caf50
+    );
+  }
+  50% {
+    border-image-source: linear-gradient(
+      45deg,
+      #f44336,
+      #ff9800,
+      #4caf50,
+      #2196f3
+    );
+  }
+  75% {
+    border-image-source: linear-gradient(
+      45deg,
+      #ff9800,
+      #4caf50,
+      #2196f3,
+      #f44336
+    );
+  }
+}
+
+.border-gradient {
+  border-image-slice: 1;
+  border-image-width: 4px;
+  animation: pulse 4s linear infinite;
 }
