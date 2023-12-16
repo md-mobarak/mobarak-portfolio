@@ -2,9 +2,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { ToggleContext } from "@/pages/_app";
 // import Link from "next/link";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Link } from "react-scroll";
-import { spy } from "react-scrollspy";
 // import { FaMoon } from "react-icons/fa";
 // import { GoSun } from "react-icons/go";
 const Navbar = () => {
@@ -13,22 +12,22 @@ const Navbar = () => {
   const handletoggleColor = () => {
     setToggleColor(!toggleColor);
   };
-  useEffect(() => {
-    spy?.update();
-  }, []);
+  // useEffect(() => {
+  //   spy?.update();
+  // }, []);
 
-  const handleSetActive = (to) => {
-    // Add any additional logic if needed
-    console.log(to);
-  };
+  // const handleSetActive = (to) => {
+  //   // Add any additional logic if needed
+  //   console.log(to);
+  // };
 
   return (
-    <div className=" px-9 py-6 relative">
-      <nav className=" font-sans   bg-success rounded-xl   grid grid-cols-3   z-50 text-xl font-semibold p-6 text-white ">
+    <div className=" px-9 py-6 relative ">
+      <nav className=" font-sans   bg-success rounded-xl font-semibold   grid grid-cols-3  z-50  p-6  ">
         <h1 className="text-2xl font-bold text-white uppercase">
           Mob<span className="text-info hover:text-secondary">arak</span>
         </h1>
-        <div className="lg:flex text-info justify-around space-x-5 items-center hidden ">
+        <div className="lg:flex text-info justify-around uppercase space-x-5 items-center hidden font-serif">
           <Link to="/" smooth={true} duration={500}>
             <p className="hover:text-secondary ">Home</p>
           </Link>
@@ -36,9 +35,9 @@ const Navbar = () => {
             to="about"
             smooth={true}
             duration={500}
-            spy={true}
-            offset={-50}
-            onSetActive={handleSetActive}
+            // spy={true}
+            // offset={-50}
+            // onSetActive={handleSetActive}
           >
             <p className="hover:text-secondary cursor-pointer">About</p>
           </Link>

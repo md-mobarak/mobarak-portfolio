@@ -1,5 +1,7 @@
 import About from "@/components/About";
+import Contact from "@/components/Contact";
 import Education from "@/components/Education";
+import Footer from "@/components/Footer";
 import Home from "@/components/Home";
 import Portfolio from "@/components/Portfolio";
 import Services from "@/components/Services";
@@ -40,14 +42,18 @@ export default function Index() {
       <About></About>
       <Education></Education>
       <div
-        className={`fixed bottom-4 right-8 ${isVisible ? "block" : "hidden"}`}
+        className={`fixed bottom-4 z-50 right-8 ${
+          isVisible ? "block" : "hidden"
+        }`}
       >
         <button onClick={scrollToTop}>
-          <FaArrowAltCircleUp className="h-10 w-10 text-info" />
+          <FaArrowAltCircleUp className="h-16 w-16 text-info" />
         </button>
       </div>
       <Services></Services>
       <Portfolio></Portfolio>
+      <Contact></Contact>
+      <Footer></Footer>
     </main>
   );
 }
