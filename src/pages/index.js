@@ -3,8 +3,9 @@ import Contact from "@/components/Contact";
 import Education from "@/components/Education";
 import Footer from "@/components/Footer";
 import Home from "@/components/Home";
-import Portfolio from "@/components/Portfolio";
+// import Portfolio from "@/components/Portfolio";
 import Services from "@/components/Services";
+import Skills from "@/components/Skills";
 import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
 import { FaArrowAltCircleUp } from "react-icons/fa";
@@ -40,6 +41,7 @@ export default function Index() {
     <main className="bg-success font-serif">
       <Home></Home>
       <About></About>
+      <Skills></Skills>
       <Education></Education>
       <div
         className={`fixed bottom-4 z-50 right-8 ${
@@ -51,7 +53,7 @@ export default function Index() {
         </button>
       </div>
       <Services></Services>
-      <Portfolio></Portfolio>
+      {/* <Portfolio></Portfolio> */}
       <Contact></Contact>
       <Footer></Footer>
     </main>

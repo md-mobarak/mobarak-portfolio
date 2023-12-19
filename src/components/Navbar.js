@@ -1,71 +1,77 @@
 /* eslint-disable @next/next/no-img-element */
-/* eslint-disable @next/next/no-img-element */
 import { ToggleContext } from "@/pages/_app";
-// import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
-// import { FaMoon } from "react-icons/fa";
-// import { GoSun } from "react-icons/go";
+
 const Navbar = () => {
   const { toggleColor, setToggleColor } = useContext(ToggleContext);
-  // console.log(toggleColor);
+  const [isOpen, setIsOpen] = useState(false);
+
   const handletoggleColor = () => {
     setToggleColor(!toggleColor);
   };
-  // useEffect(() => {
-  //   spy?.update();
-  // }, []);
 
-  // const handleSetActive = (to) => {
-  //   // Add any additional logic if needed
-  //   console.log(to);
-  // };
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <div className=" px-9 py-6 relative ">
-      <nav className=" font-sans   bg-success rounded-xl font-semibold   grid grid-cols-3  z-50  p-6  ">
+    <div className="px-9 py-6 relative">
+      <nav className="font-sans bg-success rounded-xl font-semibold grid grid-cols-3 z-50 p-6 relative">
         <h1 className="text-2xl font-bold text-white uppercase">
-          Mob<span className="text-info hover:text-secondary">arak</span>
+          <span className="">Mob</span>
+          <span className="text-info hover:text-secondary">arak</span>
         </h1>
-        <div className="lg:flex text-info justify-around uppercase space-x-5 items-center hidden font-serif">
-          <Link to="/" smooth={true} duration={500}>
-            <p className="hover:text-secondary ">Home</p>
-          </Link>
-          <Link
-            to="about"
-            smooth={true}
-            duration={500}
-            // spy={true}
-            // offset={-50}
-            // onSetActive={handleSetActive}
+        <div className="lg:hidden flex items-center absolute right-4 top-4">
+          <button
+            className="text-white focus:outline-none"
+            onClick={handleToggle}
           >
+            {isOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
+        <div
+          className={`lg:flex text-info uppercase space-x-5 items-center ${
+            isOpen ? "block" : "hidden"
+          } lg:flex lg:space-x-8`}
+        >
+          <Link to="/" smooth={true} duration={500} onClick={handleToggle}>
+            <p className="hover:text-secondary">Home</p>
+          </Link>
+          <Link to="about" smooth={true} duration={500} onClick={handleToggle}>
             <p className="hover:text-secondary cursor-pointer">About</p>
           </Link>
-          <Link to="services" smooth={true} duration={500}>
+          <Link
+            to="services"
+            smooth={true}
+            duration={500}
+            onClick={handleToggle}
+          >
             <p className="hover:text-secondary cursor-pointer">Services</p>
           </Link>
-
-          <Link to="portfolio" smooth={true} duration={500}>
+          <Link
+            to="portfolio"
+            smooth={true}
+            duration={500}
+            onClick={handleToggle}
+          >
             <p className="hover:text-secondary cursor-pointer">Portfolio</p>
           </Link>
-          <Link href="/blog">
+          <Link href="/blog" onClick={handleToggle}>
             <p className="hover:text-secondary">Blog</p>
           </Link>
-          <Link href="/contact">
+          <Link href="/contact" onClick={handleToggle}>
             <p className="hover:text-secondary">Contact</p>
           </Link>
         </div>
-        <div className="flex justify-end ">
-          <button className="btn btn-info hover:btn-secondary btn-sm ">
+        <div className="lg:flex hidden justify-end">
+          <button
+            className="btn btn-info hover:btn-secondary btn-sm"
+            onClick={handletoggleColor}
+          >
             Hire me
           </button>
-
-          {/* <button
-            onClick={handletoggleColor}
-            className={`toggle-button ${toggleColor ? "dark" : "light"}`}
-          >
-            {toggleColor ? <FiMoon /> : <FiSun />}
-          </button> */}
         </div>
       </nav>
     </div>

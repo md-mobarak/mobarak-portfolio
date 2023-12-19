@@ -1,19 +1,28 @@
-import Map from "./Map";
-
+/* eslint-disable @next/next/no-img-element */
 const Contact = () => {
   return (
-    <div className=" p-20 ">
-      <h1 className="text-center text-5xl mb-10 font-bold text-info">
+    <div className=" lg:px-20 px-10 ">
+      <h1 className="text-center text-2xl lg:text-5xl mb-10 uppercase font-bold text-info">
         Contact
       </h1>
 
-      <div className="flex justify-between items-center p-16  bg-gradient-to-b from-info via-gray-800 to-success">
-        <div className="bg-opacity-30 w-1/2 bg-white p-8 rounded-md shadow-md backdrop-filter backdrop-blur-md">
+      <div className="lg:flex justify-between  lg:px-0 items-center lg:p-16 space-x-5  lg:bg-gradient-to-b from-info via-gray-800 to-success">
+        <div data-aos="zoom-in-up" className=" lg:hidden lg:w-1/2 ">
+          <img
+            className="lg:h-[617px]"
+            src="https://i.ibb.co/SnbQmtq/this-removebg-preview.png"
+            alt=""
+          />
+        </div>
+        <div
+          data-aos="zoom-in-up"
+          className="bg-opacity-30  lg:w-1/2 bg-white p-8 rounded-md shadow-md backdrop-filter backdrop-blur-md"
+        >
           <h1 className="text-3xl font-bold mb-4 text-gray-800">
             Get In Touch
           </h1>
           <form>
-            <div className="mb-4">
+            <div className="mb-2">
               <label
                 htmlFor="username"
                 className="block text-gray-800 font-semibold mb-2"
@@ -29,7 +38,7 @@ const Contact = () => {
               />
             </div>
 
-            <div className="mb-4">
+            <div className="mb-2">
               <label
                 htmlFor="email"
                 className="block text-gray-800 font-semibold mb-2"
@@ -45,7 +54,7 @@ const Contact = () => {
               />
             </div>
 
-            <div className="mb-4">
+            <div className="mb-2">
               <label
                 htmlFor="subject"
                 className="block text-gray-800 font-semibold mb-2"
@@ -61,7 +70,7 @@ const Contact = () => {
               />
             </div>
 
-            <div className="mb-4">
+            <div className="mb-2">
               <label
                 htmlFor="description"
                 className="block text-gray-800 font-semibold mb-2"
@@ -85,12 +94,14 @@ const Contact = () => {
             </button>
           </form>
         </div>
-        <div>
-        <Map></Map>
+        <div data-aos="zoom-in-up" className="hidden lg:block lg:w-1/2 ">
+          <img
+            className="lg:h-[617px]"
+            src="https://i.ibb.co/SnbQmtq/this-removebg-preview.png"
+            alt=""
+          />
+        </div>
       </div>
-      </div>
-
-  
     </div>
   );
 };

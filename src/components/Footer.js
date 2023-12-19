@@ -4,16 +4,16 @@ import { IoMail } from "react-icons/io5";
 
 const Footer = () => {
   return (
-    <div className="px-20">
-      <div className="cursor-pointer bg-gradient-to-t from-info via-success to-success mt-20 border-t-2 py-10 px-20 border-info  lg:grid grid-cols-4 space-x-6">
-        <div className="w-1/2">
+    <div className="lg:px-20 px-10">
+      <div className="cursor-pointer bg-gradient-to-t from-info via-success to-success mt-20 border-t-2 py-10 px-5 lg:px-20 border-info  lg:grid grid-cols-4 lg:space-x-6">
+        <div className="lg:w-1/2">
           <h1 className="text-info text-3xl my-3">MOBARAK</h1>
-          <p className="text-justify text-white">
+          <p className="lg:text-justify text-white">
             When I am working on a problem I never think about beauty but when I
             have finished, if the solution is not beautiful, I know it is wrong
           </p>
         </div>
-        <div className="w-1/2 ">
+        <div className="lg:w-1/2 ">
           <h1 className="text-info text-3xl my-3">Links</h1>
           <p className="text-white mb-2 hover:text-info"> Home</p>
           <p className="text-white mb-2 hover:text-info"> Portfolio</p>
@@ -22,13 +22,13 @@ const Footer = () => {
           <p className="text-white mb-2 hover:text-info"> Services</p>
           <p className="text-white mb-2 hover:text-info"> Contact</p>
         </div>
-        <div className="w-1/2">
+        <div className="lg:w-1/2">
           <h1 className="text-info text-3xl my-3">Services</h1>
           <p className="text-white mb-2 hover:text-info">Web Development</p>
           <p className="text-white mb-2 hover:text-info"> Web Design</p>
           <p className="text-white mb-2 hover:text-info"> Business Strategy</p>
         </div>
-        <div className="w-1/2 hover:text-info">
+        <div className="lg:w-1/2 hover:text-info">
           <h1 className="text-info text-3xl my-3">Address</h1>
           <div className="flex space-x-4 items-center hover:text-info text-white mb-2">
             <FaLocationDot className="h-5 w-5"></FaLocationDot>
