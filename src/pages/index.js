@@ -3,7 +3,7 @@ import Contact from "@/components/Contact";
 import Education from "@/components/Education";
 import Footer from "@/components/Footer";
 import Home from "@/components/Home";
-// import Portfolio from "@/components/Portfolio";
+import Portfolio from "@/components/Portfolio";
 import Services from "@/components/Services";
 import Skills from "@/components/Skills";
 import { Inter } from "next/font/google";
@@ -53,7 +53,7 @@ export default function Index() {
         </button>
       </div>
       <Services></Services>
-      {/* <Portfolio></Portfolio> */}
+      <Portfolio></Portfolio>
       <Contact></Contact>
       <Footer></Footer>
     </main>

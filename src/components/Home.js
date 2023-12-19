@@ -58,7 +58,7 @@ const Home = () => {
         <div className="w-10 hidden lg:block  h-10 blur-sm absolute animate-move  top-16 right-24  rounded-full bg-info "></div>
       </div>
       <div className="lg:flex lg:justify-evenly lg:items-center mt-[-200px] lg:mt-[-100px] px-10 lg:space-x-8 lg:px-20">
-        <div data-aos="zoom-out-right">
+        <div data-aos="zoom-out-right" className="px-5 lg:px-0">
           <h1 className="text-secondary font-serif font-bold text-3xl lg:text-6xl uppercase">
             {fixedText}
           </h1>
@@ -67,14 +67,14 @@ const Home = () => {
               {currentText}
             </p>
           </div>
-          <button onClick={handleDownload} class="button-71 my-5" role="button">
+          <button onClick={handleDownload} class="button-71 my-8" role="button">
             Download CV
           </button>
         </div>
         <div className="relative" data-aos="zoom-out-right">
           <img
-            className="profile  mt-20 lg:mt-0"
-            src="https://usmanarif.netlify.app/assets/images/profile_pic.png"
+            className="profile  mt-20 lg:mt-0 w-[500px] h-[500px]  bg-gradient-to-t from-secondary  via-success to-success"
+            src="https://i.ibb.co/dLLQrsY/Riopn-unscreen.gif"
             alt=""
           />
           <div className="w-16 hidden lg:block  h-16 blur-sm absolute animate-move   left-32  rounded-full bg-info "></div>

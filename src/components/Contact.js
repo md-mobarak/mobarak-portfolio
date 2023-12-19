@@ -2,7 +2,7 @@
 const Contact = () => {
   return (
     <div className=" lg:px-20 px-10 ">
-      <h1 className="text-center text-2xl lg:text-5xl mb-10 uppercase font-bold text-info">
+      <h1 className="text-center lg:text-5xl text-3xl mb-10 uppercase font-bold text-info">
         Contact
       </h1>
 

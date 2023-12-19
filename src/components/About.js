@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import { Element } from "react-scroll";
 
@@ -26,11 +27,16 @@ const About = () => {
             About Me
           </h1>
           <p className="my-6 text-white  lg:text-left text-justify ">
-            I am a professional Web Developer & Web Designer based in Pakistan
-            working on different projects. I can build awesome Designs with
-            different programming languages.
+            Greetings! I'm Mobarak Hossen, a skilled full-stack web developer
+            hailing from the vibrant landscapes of Bangladesh. Proficient in
+            both front-end and back-end technologies, I specialize in
+            transforming concepts into seamless, interactive web experiences.
+            Join me on this journey of turning ideas into reality through
+            innovative and efficient development. Let's build something
+            extraordinary together!
           </p>
-          <div className="text-center lg:text-left">
+
+          <div className=" text-left">
             <p className="text-info text-lg">
               Name:
               <span className="text-white text-base">
