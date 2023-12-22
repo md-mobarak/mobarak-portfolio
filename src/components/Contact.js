@@ -6,7 +6,7 @@ const Contact = () => {
         Contact
       </h1>
 
-      <div className="lg:flex justify-between  lg:px-0 items-center lg:p-16 space-x-5  lg:bg-gradient-to-b from-info via-gray-800 to-success">
+      <div className="lg:flex justify-between  items-center lg:p-5 space-x-4  lg:bg-gradient-to-b from-info via-gray-800 to-success">
         <div data-aos="zoom-in-up" className=" lg:hidden lg:w-1/2 ">
           <img
             className="lg:h-[617px]"
