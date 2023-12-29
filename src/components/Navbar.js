@@ -61,8 +61,13 @@ const Navbar = () => {
           <Link href="/blog" onClick={handleToggle}>
             <p className="hover:text-secondary">Blog</p>
           </Link>
-          <Link href="/contact" onClick={handleToggle}>
-            <p className="hover:text-secondary">Contact</p>
+          <Link
+            to="contact"
+            smooth={true}
+            duration={500}
+            onClick={handleToggle}
+          >
+            <p className="hover:text-secondary cursor-pointer">Contact</p>
           </Link>
         </div>
         <div className="lg:flex hidden justify-end">

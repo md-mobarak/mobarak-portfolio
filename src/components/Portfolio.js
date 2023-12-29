@@ -13,7 +13,7 @@ const Portfolio = () => {
         </h1>
         <Element name="portfolio" id="portfolio">
           <div>
-            <section className="lg:flex justify-around items-center mx-auto space-x-5  ">
+            <section className="lg:flex lg:justify-around lg:items-center lg:mx-auto lg:space-x-5  ">
               <div
                 className=" lg:w-96  w-80 p-5 border border-info rounded-lg"
                 data-aos="fade-up"
@@ -87,7 +87,7 @@ const Portfolio = () => {
                               Github-server
                             </a>
                             <a
-                              href="https://your-project-site.com"
+                              href="https://painting-client-9.vercel.app/"
                               target="_blank"
                               rel="noopener noreferrer"
                               className="btn btn-info btn-outline rounded-full lg:btn-sm btn-xs "
@@ -104,7 +104,7 @@ const Portfolio = () => {
                 </div>
               </div>
               <div
-                className=" lg:w-96  w-80 p-5 border border-info rounded-lg"
+                className=" lg:w-96  w-80 p-5 border border-info rounded-lg lg:my-0 my-5"
                 data-aos="fade-up"
                 data-aos-duration="1000"
               >
