@@ -5,7 +5,11 @@ const Education = () => {
         Education
       </h1>
       <section className="lg:flex w-full">
-        <div className="lg:relative lg:w-1/2  py-8 " data-aos="fade-right">
+        <div
+          className="lg:relative lg:w-1/2  py-8 "
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <div
             data-aos="fade-up"
             data-aos-duration="1000"
@@ -31,7 +35,11 @@ const Education = () => {
         </div>
         <div className="lg:relative bg-info w-2 hidden lg:block  mx-8 border border-info "></div>
 
-        <div className="lg:relative lg:w-1/2 py-8 " data-aos="fade-right">
+        <div
+          className="lg:relative lg:w-1/2 py-8 "
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <div
             data-aos="fade-up"
             data-aos-duration="1000"
@@ -52,7 +60,11 @@ const Education = () => {
         </div>
       </section>
       <section className="lg:flex w-full">
-        <div className="lg:relative lg:w-1/2  py-8 " data-aos="fade-right">
+        <div
+          className="lg:relative lg:w-1/2  py-8 "
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <div
             data-aos="fade-up"
             data-aos-duration="1000"

@@ -17,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="px-9 py-6 relative">
+    <div className="px-9 py-6 relative font-serif">
       <nav className="font-sans bg-success rounded-xl font-semibold grid grid-cols-3 z-50 p-6 relative">
         <h1 className="text-2xl font-bold text-white uppercase">
           <span className="">Mob</span>
@@ -62,7 +62,7 @@ const Navbar = () => {
             <p className="hover:text-secondary">Blog</p>
           </Link>
           <Link
-            to="contact"
+            to="Contact"
             smooth={true}
             duration={500}
             onClick={handleToggle}
