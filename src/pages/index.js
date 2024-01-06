@@ -6,14 +6,16 @@ import Home from "@/components/Home";
 import Portfolio from "@/components/Portfolio";
 import Services from "@/components/Services";
 import Skills from "@/components/Skills";
+import { ToggleContext } from "@/pages/_app";
 import { Inter } from "next/font/google";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaArrowAltCircleUp } from "react-icons/fa";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Index() {
   const [isVisible, setIsVisible] = useState(false);
+  const { toggleColor, setToggleColor } = useContext(ToggleContext);
 
   const toggleVisibility = () => {
     if (window.pageYOffset > 300) {
@@ -38,9 +40,11 @@ export default function Index() {
     };
   }, []);
   return (
-    <main className="bg-success font-serif">
+    <main className={`${toggleColor ? "bg-success" : "bg-neutral"} font-serif`}>
       <Home></Home>
-      <About></About>
+   <div className="lg:my-20">
+   <About></About>
+   </div>
       <Skills></Skills>
       <Education></Education>
       <div
@@ -49,7 +53,11 @@ export default function Index() {
         }`}
       >
         <button onClick={scrollToTop}>
-          <FaArrowAltCircleUp className="h-16 w-16 text-info" />
+          <FaArrowAltCircleUp
+            className={`h-16 w-16 ${
+              toggleColor ? "text-info" : "text-warning"
+            }  `}
+          />
         </button>
       </div>
       <Services></Services>

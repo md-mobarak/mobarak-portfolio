@@ -1,13 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
+import { ToggleContext } from "@/pages/_app";
 import Navbar from "./Navbar";
 
 const Home = () => {
-  const fixedText = "Mobarak Hossen";
+  const { toggleColor, setToggleColor } = useContext(ToggleContext);
+  const fixedText = "Hi,I am Mobarak";
   const texts = ["I am a web developer|", "I am a creative programmer|"];
   const [index, setIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
@@ -52,38 +54,102 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-success h-full w-full">
-      <div className="bg-info mx-10 ">
+    <div
+      className={`${toggleColor ? "bg-success" : "bg-neutral"} h-full w-full `}
+    >
+      <div
+        className={`${toggleColor ? "bg-info" : "bg-neutral"}  mx-10  relative`}
+      >
         <Navbar></Navbar>
       </div>
-      <div className=" mx-10 h-64  relative bg-gradient-to-b from-info to-success ">
-        <div className="w-16 hidden lg:block h-16 blur-sm absolute animate-move  top-10 left-32  rounded-full bg-info "></div>
-        <div className="w-10 hidden lg:block  h-10 blur-sm absolute animate-move  top-16 right-24  rounded-full bg-info "></div>
+      <div
+        className={`${
+          toggleColor
+            ? "mx-10 h-64  relative bg-gradient-to-b from-info to-success "
+            : "mx-10 h-64  relative"
+        }`}
+      >
+        <div
+          className={`w-16 hidden lg:block h-16 blur-sm absolute animate-move opacity-70  top-10 left-32  rounded-full  ${
+            toggleColor ? "bg-info" : "hidden"
+          } `}
+        ></div>
+        <div
+          className={`w-10 hidden lg:block  h-10 blur-sm absolute animate-move  top-16 right-24 opacity-70  rounded-full  ${
+            toggleColor ? "bg-info" : "hidden"
+          }`}
+        ></div>
       </div>
-      <div className="lg:flex lg:justify-evenly lg:items-center mt-[-200px] lg:mt-[-100px] px-10 lg:space-x-8 lg:px-20">
+      <div className="lg:flex lg:justify-evenly md:flex md:justify-evenly md:items-center  lg:items-center mt-[-200px] lg:mt-[-100px] px-10 lg:space-x-8 lg:px-20">
         <div data-aos="zoom-out-right" className="px-5 lg:px-0">
-          <h1 className="text-secondary font-serif font-bold text-3xl lg:text-6xl uppercase">
+          <h1
+            className={`font-serif font-bold text-3xl lg:text-5xl uppercase ${
+              !toggleColor
+                ? "text-success " // Apply "text-success" class when toggleColor is false
+                : " lg:text-info text-gray-200 " // Apply gradient classes when toggleColor is true
+            }`}
+          >
             {fixedText}
           </h1>
+
           <div className="">
-            <p className="mb-6 mt-5 h-5 text-2xl lg:text-4xl text-info">
+            <p
+              className={`  ${
+                toggleColor ? "text-info" : "text-warning"
+              } mb-6 mt-5 h-5 text-2xl lg:text-4xl`}
+            >
               {currentText}
             </p>
           </div>
-          <button onClick={handleDownload} class="button-71 my-8" role="button">
+          <button
+            onClick={handleDownload}
+            className={`btn  ${
+              toggleColor
+                ? " btn-success rounded-full border-2 border-info text-info uppercase shadow-info shadow-2xl "
+                : " rounded-full bg-[#FFFFFF] border border-success  text-success uppercase shadow-2xl"
+            }  my-8   `}
+          >
             Download CV
           </button>
           <div className="flex space-x-4">
             {/* Facebook Button */}
-            <Link href="https://www.facebook.com/mdmobarak.hossen.96" passHref>
-              <button className="text-white bg-blue-700 flex justify-center w-10 h-10 items-center rounded-full">
+            <Link
+              href="https://www.facebook.com/mdmobarak.hossen.96"
+              passHref
+              className={`${
+                toggleColor
+                  ? "border-2 shadow-blue-700 shadow-md border-blue-700 p-2 rounded-full"
+                  : "border-2 shadow-blue-700 shadow-md border-blue-700 p-2 rounded-full"
+              }`}
+            >
+              <button className="text-white bg-blue-700  flex justify-center w-10 h-10 items-center rounded-full">
                 <FaFacebook className="w-6 h-6" />
+              </button>
+            </Link>
+
+            {/* GitHub Button */}
+            <Link
+              href="https://github.com/md-mobarak"
+              passHref
+              className={`${
+                toggleColor
+                  ? "border-2 shadow-white shadow-md border-gray-500 p-2 rounded-full"
+                  : "border-2 shadow-gray-500 shadow-md border-gray-500 p-2 rounded-full"
+              }`}
+            >
+              <button className="text-white bg-gray-800 flex justify-center w-10 h-10 items-center rounded-full">
+                <FaGithub className="w-6 h-6" />
               </button>
             </Link>
 
             {/* LinkedIn Button */}
             <Link
               href="https://www.linkedin.com/in/mohammad-mobarak-hossen-75b535240/"
+              className={`${
+                toggleColor
+                  ? "border-2 shadow-blue-700 shadow-md border-blue-700 p-2 rounded-full"
+                  : "border-2 shadow-blue-700 shadow-md border-blue-700 p-2 rounded-full"
+              }`}
               passHref
             >
               <button className="text-white bg-blue-700 flex justify-center w-10 h-10 items-center rounded-full">
@@ -91,14 +157,13 @@ const Home = () => {
               </button>
             </Link>
 
-            {/* GitHub Button */}
-            <Link href="https://github.com/md-mobarak" passHref>
-              <button className="text-white bg-gray-800 flex justify-center w-10 h-10 items-center rounded-full">
-                <FaGithub className="w-6 h-6" />
-              </button>
-            </Link>
             {/* Instagram Button */}
             <Link
+              className={`${
+                toggleColor
+                  ? "border-2 shadow-orange-700 shadow-md border-yellow-700 p-2 rounded-full"
+                  : "border-2 shadow-orange-700 shadow-md border-yellow-700 p-2 rounded-full"
+              }`}
               href="https://www.instagram.com/your_instagram_username/"
               passHref
             >
@@ -108,13 +173,25 @@ const Home = () => {
             </Link>
           </div>
         </div>
-        <div className="relative" data-aos="zoom-out-right">
+        <div className="relative " data-aos="zoom-out-right">
           <img
-            className="profile border border-info  mt-20 lg:mt-0 w-[500px] h-[500px]  bg-gradient-to-t from-secondary  via-success to-success"
-            src="https://i.ibb.co/dLLQrsY/Riopn-unscreen.gif"
+            className={`  mt-20 lg:mt-0 lg:w-[500px] lg:h-[500px] h-[400px]  md:w-[350px] md:h-[350px]  ${
+              toggleColor
+                ? "bg-gradient-to-t from-info  via-success to-success profile border border-info"
+                : " lg:rounded-full rounded-2xl p-8  bg:white skill md:rounded-full"
+            }`}
+            src={`${
+              toggleColor
+                ? "https://i.ibb.co/dLLQrsY/Riopn-unscreen.gif"
+                : "https://dbaasltd.com/assets/img/what-we-deliver.gif"
+            } `}
             alt=""
           />
-          <div className="w-16 hidden lg:block  h-16 blur-sm absolute animate-move   left-32  rounded-full bg-info "></div>
+          <div
+            className={`w-16 hidden lg:block  h-16 blur-sm absolute animate-move opacity-70   left-32  rounded-full  ${
+              toggleColor ? "bg-info" : "hidden"
+            } `}
+          ></div>
         </div>
       </div>
     </div>
