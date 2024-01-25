@@ -27,7 +27,7 @@ const Services = () => {
               toggleColor
                 ? " from-info border-2 border-info rounded-lg "
                 : "bg-white  rounded-2xl border border-accent skill"
-            }  overflow-hidden shadow-2xl  bg-gradient-to-r  to-success  text-white`}
+            }  overflow-hidden shadow-info shadow-lg  bg-success  text-white`}
           >
             <div className="flex items-center justify-center p-4">
               <MdWeb
@@ -65,7 +65,7 @@ const Services = () => {
               toggleColor
                 ? " from-info border-2 rounded-lg border-info "
                 : "bg-white  rounded-2xl border border-accent skill"
-            }  overflow-hidden shadow-xl  bg-gradient-to-r lg:mx-16 to-success  text-white`}
+            }  overflow-hidden shadow-info shadow-lg  bg-success  lg:mx-16   text-white`}
           >
             <div className="flex items-center justify-center p-4">
               <CgWebsite
@@ -102,7 +102,7 @@ const Services = () => {
               toggleColor
                 ? " from-info rounded-lg border-2 border-info "
                 : "bg-white  rounded-2xl border border-accent skill"
-            }  overflow-hidden shadow-xl  bg-gradient-to-r  to-success  text-white`}
+            }  overflow-hidden shadow-info shadow-lg  bg-success   text-white`}
           >
             <div className="flex items-center justify-center p-3">
               <FaMobileScreenButton
@@ -141,7 +141,7 @@ const Services = () => {
               toggleColor
                 ? " from-info border-2 border-info rounded-lg"
                 : "bg-white  rounded-2xl border border-accent skill"
-            }  overflow-hidden shadow-xl  bg-gradient-to-r  to-success  text-white`}
+            }  overflow-hidden shadow-info shadow-lg  bg-success   text-white`}
           >
             <div className="flex items-center justify-center p-3">
               <FaCode
@@ -180,7 +180,7 @@ const Services = () => {
               toggleColor
                 ? " from-info border-2 border-info "
                 : "bg-white  rounded-2xl border border-accent skill"
-            }  overflow-hidden shadow-xl bg-gradient-to-r  to-success  text-white`}
+            }  overflow-hidden shadow-info shadow-lg  bg-success   text-white`}
           >
             <div className="flex items-center justify-center p-3">
               <BiLogoPlayStore
@@ -219,7 +219,7 @@ const Services = () => {
               toggleColor
                 ? " from-info border-2 border-info rounded-lg "
                 : "bg-white  rounded-2xl border border-accent skill"
-            } overflow-hidden shadow-xl  bg-gradient-to-r  to-success  text-white`}
+            } overflow-hidden shadow-info shadow-lg  bg-success   text-white`}
           >
             <div className="flex items-center justify-center p-3">
               <VscDebug
