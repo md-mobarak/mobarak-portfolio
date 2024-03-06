@@ -37,7 +37,7 @@ const About = () => {
           className={`w-full lg:w-1/2 md:w-full mx-auto ${
             toggleColor
               ? ""
-              : "lg:border lg:border-accent lg:p-8 lg:rounded-xl lg:shadow-2xl"
+              : ""
           }`} // Adjusted width for better responsiveness
           data-aos="fade-down"
           data-aos-duration="2000"

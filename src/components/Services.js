@@ -69,7 +69,7 @@ const Services = () => {
                 data-aos-duration="1000"
                 className={` lg:w-80 mb-8 lg:mb-0 md:mx-4 lg:mx-0 w-72 ${
                   toggleColor
-                    ? " from-info border-2 border-info rounded-lg "
+                    ? " from-info border-2 border-info rounded-lg shadow-info shadow-md hover:shadow-lg hover:shadow-info hover:transition duration-300 ease-in-out"
                     : "bg-white  rounded-2xl border border-white skill"
                 }  overflow-hidden shadow-info shadow-lg  bg-success  text-white`}
               >
