@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { ToggleContext } from "@/pages/_app";
 // import "animate.css";
 import { useContext } from "react";
@@ -38,15 +39,13 @@ const Education = () => {
                 : "bg-white  shadow-gray-300 skill"
             } to-gray-200 p-6 rounded-xl`}
           >
-            <div className={`text-2xl font-bold mb-4 ${toggleColor?"text-white":"text-success"}`}>2019-2023</div>
+            <div className={`text-2xl font-bold mb-4 ${toggleColor?"text-white":"text-success"}`}>2020-(Honours/present)</div>
             <div className={`text-lg font-semibold mb-4  ${toggleColor?"text-white":"text-success"}`}>
-              Your College Name
+              National University
             </div>
-            <div className={`${toggleColor ? "text-info" : "text-accent"} `}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+            <div className={`${toggleColor ? "text-info" : "text-accent"} text-justify`}>
+      
+I am currently studying Political Science Honours while immersing myself in web development, passionate about mastering full-stack skills. Through academic studies and coding projects, I aim to merge analytical thinking with technical expertise for innovative digital solutions, driven by a commitment to excel in both fields.
             </div>
           </div>
         </div>
@@ -90,15 +89,13 @@ const Education = () => {
                 : "bg-white  shadow-gray-300 skill"
             } to-gray-200 p-6 rounded-xl`}
           >
-            <div className={`text-2xl font-bold mb-4 ${toggleColor?"text-white":"text-success"}`}>2019-2023</div>
+            <div className={`text-2xl font-bold mb-4 ${toggleColor?"text-white":"text-success"}`}>2018-2019(HSC)</div>
             <div className={`text-lg font-semibold mb-4  ${toggleColor?"text-white":"text-success"}`}>
-              Your College Name
+              Kagatia Kamil Madrasha
             </div>
-            <div className={`${toggleColor ? "text-info" : "text-accent"} `}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+            <div className={`${toggleColor ? "text-info" : "text-accent"} text-justify `}>
+
+            In 2019, I completed my HSC with a GPA of 4.86 from Kagatia Kamil Madrasha, laying a strong academic foundation. Eager for new challenges, I am enthusiastic about further academic and personal growth. With a commitment to excellence and a thirst for knowledge, I am poised for significant strides in my future endeavors.
             </div>
           </div>
         </div>
@@ -123,15 +120,14 @@ const Education = () => {
                 : "bg-white  shadow-gray-300 skill"
             } to-gray-200 p-6 rounded-xl`}
           >
-            <div className={`text-2xl font-bold mb-4 ${toggleColor?"text-white":"text-success"}`}>2019-2023</div>
+            <div className={`text-2xl font-bold mb-4 ${toggleColor?"text-white":"text-success"}`}>2016-2017(SSC)</div>
             <div className={`text-lg font-semibold mb-4  ${toggleColor?"text-white":"text-success"}`}>
-              Your College Name
+            Kagatia Kamil Madrasha
             </div>
-            <div className={`${toggleColor ? "text-info" : "text-accent"} `}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+            <div className={`${toggleColor ? "text-info" : "text-accent"} text-justify`}>
+            
+
+            In my SSC exams, I achieved a GPA of 4.70 from Kagatia Kamil Madrasha, laying a foundation for academic success. The institution nurtured my academic skills and instilled a passion for learning, preparing me for future endeavors. Grateful for the invaluable experience gained, I am ready to pursue excellence in higher education and beyond.
             </div>
           </div>
         </div>
