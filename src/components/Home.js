@@ -34,7 +34,7 @@ const Home = () => {
   const handleDownload = () => {
     // Replace this link with the direct link to your CV file
     const cvLink =
-      "https://drive.google.com/file/d/1cR6wivMFGWdVitYWCRSmTIb1Z1-poS5x/view?usp=sharing";
+      "https://drive.google.com/file/d/1ABgoj6hnm2LfbTV6x18UHpLqE_F_Bbuu/view?usp=sharing";
 
     // Create an invisible link element
     const downloadLink = document.createElement("a");
