@@ -12,7 +12,7 @@ const Portfolio = () => {
       title: "Vehicle Management",
       imageUrl:
         "https://img.freepik.com/free-vector/user-panel-template-infographic-dashboard_23-2148378206.jpg?t=st=1709706995~exp=1709710595~hmac=70b3068e83be41ab9cccff1f6655eb52118124ccc403aaafd113ae5dbddb1416&w=740",
-      description: "Web Design & Development",
+      description: "Web Design & Development ",
       githubClientUrl:
         "hhttps://github.com/md-mobarak/vehicle_management_system_client",
       githubServerUrl:
@@ -130,7 +130,7 @@ const Portfolio = () => {
                         toggleColor ? "text-white" : "text-success"
                       }  text-2xl font-semibold`}
                     >
-                      {project.title}
+                      {project.title} 
                     </h1>
                     <p
                       className={`${
@@ -156,7 +156,7 @@ const Portfolio = () => {
                     </button>
                     <dialog
                       id={`my_modal_${index + 1}`}
-                      className="modal ml-4 lg:ml-0 "
+                      className="modal  lg:ml-0 "
                     >
                       <div className="">
                         <div
@@ -164,22 +164,22 @@ const Portfolio = () => {
                             toggleColor
                               ? "bg-success border-info"
                               : "bg-neutral border-accent"
-                          } border-2  modal-box rounded-lg shadow-lg overflow-hidden`}
+                          } border-2  modal-box rounded-lg shadow-lg overflow-hidden w-full h-full`}
                         >
                           <form method="dialog">
                             <button
                               className={`btn btn-sm btn-circle hover:bg-red-500 text-white ${
                                 toggleColor ? "bg-info" : "bg-accent"
-                              } btn-ghost absolute right-2 top-2`}
+                              } btn-ghost absolute right-2 top-1 z-50`}
                             >
                               ✕
                             </button>
                           </form>
                           {/* Left Side: Image */}
-                          <div className="w-full">
+                          <div className="w-full flex justify-center  items-center">
                             <div class="content">
                               <div class="screen">
-                                <img src={project.modalImg} />
+                                <img className="cursor-pointer" src={project.modalImg} />
                               </div>
                             </div>
 
@@ -204,18 +204,18 @@ const Portfolio = () => {
                                 toggleColor ? "text-white" : "text-accent"
                               }  mb-4`}
                             >
-                              {project.description}
+                              {project.description .length > 70 ?"Your M0 free tier cluster, Cluster0, has been idle since 2024/03/21.MongoDB Atlas will automatically pause this cluster after 60 days of inactivity, at 10:25 PM EDT on 2024/05/21.To prevent this cluster from being paused, initiate a connection to your cluster before 2024/05/21. View our documentation for instructions on how to connect to your cluster.":project.description}
                             </p>
 
                             {/* GitHub Links */}
-                            <div className="flex lg:space-x-4 space-x-2 mb-4 items-center">
+                            <div className="flex  mb-4 items-center gap-x-3">
                               <a
                                 href={project.githubClientUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={`btn  ${
                                   toggleColor ? "btn-info" : "btn-success"
-                                } btn-outline rounded-full lg:btn-sm btn-xs `}
+                                } btn-outline rounded-full btn-xs `}
                               >
                                 Github-client
                               </a>
@@ -225,7 +225,7 @@ const Portfolio = () => {
                                 rel="noopener noreferrer"
                                 className={`btn  ${
                                   toggleColor ? "btn-info" : "btn-success"
-                                } btn-outline rounded-full lg:btn-sm btn-xs `}
+                                } btn-outline rounded-full btn-xs `}
                               >
                                 Github-server
                               </a>
@@ -235,7 +235,7 @@ const Portfolio = () => {
                                 rel="noopener noreferrer"
                                 className={`btn  ${
                                   toggleColor ? "btn-info" : "btn-success"
-                                } btn-outline rounded-full lg:btn-sm btn-xs `}
+                                } btn-outline rounded-full  btn-xs`}
                               >
                                 Visit Site
                               </a>
