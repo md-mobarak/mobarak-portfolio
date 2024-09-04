@@ -182,7 +182,7 @@ const Home = () => {
             }`}
             src={`${
               toggleColor
-                ? "https://i.ibb.co/dLLQrsY/Riopn-unscreen.gif"
+                ? "https://dbaasltd.com/assets/img/what-we-deliver.gif"
                 : "https://dbaasltd.com/assets/img/what-we-deliver.gif"
             } `}
             alt=""

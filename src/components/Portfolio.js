@@ -18,7 +18,7 @@ const Portfolio = () => {
       githubServerUrl:
         "https://github.com/md-mobarak/vehicle_management_system_server",
       siteUrl: "https://vehicle-management-frontend-seven.vercel.app/login",
-      modalImg: "https://i.imgur.com/aFFEZ9U.jpg",
+      modalImg: "https://img.freepik.com/free-vector/user-panel-template-infographic-dashboard_23-2148378206.jpg?t=st=1709706995~exp=1709710595~hmac=70b3068e83be41ab9cccff1f6655eb52118124ccc403aaafd113ae5dbddb1416&w=740",
     },
     {
       title: "Painting Services",
@@ -177,17 +177,21 @@ const Portfolio = () => {
                           </form>
                           {/* Left Side: Image */}
                           <div className="w-full flex justify-center  items-center">
-                            <div class="content">
+                            {/* <div class="content">
                               <div class="screen">
-                                <img className="cursor-pointer" src={project.modalImg} />
+                                <img className="cursor-pointer" src={project?.modalImg} />
                               </div>
-                            </div>
+                            </div> */}
 
-                            {/* <img
+                            { 
+                        
+                            
+                          <img
                               src={project.modalImg} // Replace with your image URL
                               alt="Project Image"
                               className="w-full h-full object-cover rounded-lg"
-                            /> */}
+                            /> 
+                            }
                           </div>
 
                           {/* Right Side: Portfolio Description, GitHub Links, and Site Link */}
