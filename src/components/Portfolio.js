@@ -263,7 +263,7 @@
 
 // export default Portfolio;
 
-
+"use client";
 /* eslint-disable jsx-a11y/alt-text */
 import { ToggleContext } from "@/pages/_app";
 import { Element } from "react-scroll";

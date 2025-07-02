@@ -226,6 +226,7 @@
 // export default Contact;
 
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import { ToggleContext } from "@/pages/_app";
 import emailjs from "emailjs-com";
 import { useState, useContext, useRef, useEffect } from "react";

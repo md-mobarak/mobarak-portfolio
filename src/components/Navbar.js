@@ -23,6 +23,29 @@ const Navbar = () => {
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
+  const handleDownload = () => {
+    // Replace this link with the direct link to your CV file
+    // const cvLink =
+    //   "https://drive.google.com/file/d/1CFHiBNSwu_5BHpoo5L9sEWmbVueGNSUP/view?usp=sharing";
+
+    window.open('https://drive.google.com/file/d/1CFHiBNSwu_5BHpoo5L9sEWmbVueGNSUP/view?usp=sharing', '_blank');
+    // Create an invisible link element
+    const downloadLink = document.createElement("a");
+
+    // Set the link's href to the direct link of the file
+    // downloadLink.href = cvLink;
+
+    // Set the download attribute to specify the file name
+    downloadLink.download = "Your_CV.pdf";
+
+    // Append the link to the body and click it programmatically
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+
+    // Remove the link from the body
+    document.body.removeChild(downloadLink);
+  };
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -126,7 +149,7 @@ const Navbar = () => {
                   ? "bg-success hover:bg-blue-500 text-white"
                   : "bg-orange-500 hover:bg-orange-600 text-white"
                   } transition-colors`}
-                onClick={handletoggleColor}
+                onClick={handleDownload}
               >
                 Hire me
               </button>

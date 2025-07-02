@@ -200,7 +200,7 @@
 // };
 
 // export default Footer;
-
+"use client";
 import { ToggleContext } from "@/pages/_app";
 import { useContext } from "react";
 import { FaPhoneAlt, FaGithub, FaLinkedin, FaDribbble, FaTwitter } from "react-icons/fa";

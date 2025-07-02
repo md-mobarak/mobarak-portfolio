@@ -109,7 +109,7 @@
 // };
 
 // export default Services;
-
+"use client";
 /* eslint-disable react/jsx-key */
 import { ToggleContext } from "@/pages/_app";
 import { useContext } from "react";
