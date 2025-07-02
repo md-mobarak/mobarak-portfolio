@@ -55,7 +55,7 @@ const Home = () => {
 
   return (
     <div
-      className={`${toggleColor ? "bg-success" : "bg-neutral"} h-full w-full `}
+      className={`${toggleColor ? "bg-success" : "bg-neutral"} h-full w-full relative overflow-hidden `}
     >
       <div
         className={`${toggleColor ? "bg-info" : "bg-neutral"}  mx-10  relative`}
@@ -63,51 +63,49 @@ const Home = () => {
         <Navbar></Navbar>
       </div>
       <div
-        className={`${
-          toggleColor
-            ? "mx-10 h-64  relative bg-gradient-to-b from-info to-success "
-            : "mx-10 h-64  relative"
-        }`}
+        className={`${toggleColor
+          ? "mx-10 h-64  relative bg-gradient-to-b from-info to-success "
+          : "mx-10 h-64  relative"
+          }`}
       >
+        {/* Animated background elements */}
+        {/* <div className="absolute top-20 -left-10 w-64 h-64 rounded-full bg-secondary/20 blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-10 -right-10 w-56 h-56 rounded-full bg-accent/20 blur-3xl animate-pulse-slow"></div> */}
+
         <div
-          className={`w-16 hidden lg:block h-16 blur-sm absolute animate-move opacity-70  top-10 left-32  rounded-full  ${
-            toggleColor ? "bg-info" : "hidden"
-          } `}
+          className={`w-16 hidden lg:block h-16 blur-sm absolute animate-move opacity-70  top-10 left-32  rounded-full  ${toggleColor ? "bg-info" : "hidden"
+            } `}
         ></div>
         <div
-          className={`w-10 hidden lg:block  h-10 blur-sm absolute animate-move  top-16 right-24 opacity-70  rounded-full  ${
-            toggleColor ? "bg-info" : "hidden"
-          }`}
+          className={`w-10 hidden lg:block  h-10 blur-sm absolute animate-move  top-16 right-24 opacity-70  rounded-full  ${toggleColor ? "bg-info" : "hidden"
+            }`}
         ></div>
       </div>
       <div className="lg:flex lg:justify-evenly md:flex md:justify-evenly md:items-center  lg:items-center mt-[-200px] lg:mt-[-100px] px-10 lg:space-x-8 lg:px-20">
         <div data-aos="zoom-out-right" className="px-5 lg:px-0">
           <h1
-            className={`font-serif font-bold text-3xl lg:text-5xl uppercase ${
-              !toggleColor
-                ? "text-success " // Apply "text-success" class when toggleColor is false
-                : " lg:text-info text-gray-200 " // Apply gradient classes when toggleColor is true
-            }`}
+            className={`font-serif font-bold text-3xl lg:text-5xl uppercase ${!toggleColor
+              ? "text-success " // Apply "text-success" class when toggleColor is false
+              : " lg:text-info text-gray-200 " // Apply gradient classes when toggleColor is true
+              }`}
           >
             {fixedText}
           </h1>
 
           <div className="">
             <p
-              className={`  ${
-                toggleColor ? "text-info" : "text-warning"
-              } mb-6 mt-5 h-5 text-2xl lg:text-4xl`}
+              className={`  ${toggleColor ? "text-info" : "text-warning"
+                } mb-6 mt-5 h-5 text-2xl lg:text-4xl`}
             >
               {currentText}
             </p>
           </div>
           <button
             onClick={handleDownload}
-            className={`btn  ${
-              toggleColor
-                ? " btn-success rounded-full border-2 border-info text-info uppercase shadow-info shadow-2xl "
-                : " rounded-full bg-[#FFFFFF] border border-success  text-success uppercase shadow-2xl"
-            }  my-8   `}
+            className={`btn  ${toggleColor
+              ? " btn-success rounded-full border-2 border-info text-info uppercase shadow-info shadow-2xl "
+              : " rounded-full bg-[#FFFFFF] border border-success  text-success uppercase shadow-2xl"
+              }  my-8   `}
           >
             Download CV
           </button>
@@ -116,11 +114,10 @@ const Home = () => {
             <Link
               href="https://www.facebook.com/mdmobarak.hossen.96"
               passHref
-              className={`${
-                toggleColor
-                  ? "border-2 shadow-blue-700 shadow-md border-blue-700 p-2 rounded-full"
-                  : "border-2 shadow-blue-700 shadow-md border-blue-700 p-2 rounded-full"
-              }`}
+              className={`${toggleColor
+                ? "border-2 shadow-blue-700 shadow-md border-blue-700 p-2 rounded-full"
+                : "border-2 shadow-blue-700 shadow-md border-blue-700 p-2 rounded-full"
+                }`}
             >
               <button className="text-white bg-blue-700  flex justify-center w-10 h-10 items-center rounded-full">
                 <FaFacebook className="w-6 h-6" />
@@ -131,11 +128,10 @@ const Home = () => {
             <Link
               href="https://github.com/md-mobarak"
               passHref
-              className={`${
-                toggleColor
-                  ? "border-2 shadow-white shadow-md border-gray-500 p-2 rounded-full"
-                  : "border-2 shadow-gray-500 shadow-md border-gray-500 p-2 rounded-full"
-              }`}
+              className={`${toggleColor
+                ? "border-2 shadow-white shadow-md border-gray-500 p-2 rounded-full"
+                : "border-2 shadow-gray-500 shadow-md border-gray-500 p-2 rounded-full"
+                }`}
             >
               <button className="text-white bg-gray-800 flex justify-center w-10 h-10 items-center rounded-full">
                 <FaGithub className="w-6 h-6" />
@@ -145,11 +141,10 @@ const Home = () => {
             {/* LinkedIn Button */}
             <Link
               href="https://www.linkedin.com/in/mohammad-mobarak-hossen-75b535240/"
-              className={`${
-                toggleColor
-                  ? "border-2 shadow-blue-700 shadow-md border-blue-700 p-2 rounded-full"
-                  : "border-2 shadow-blue-700 shadow-md border-blue-700 p-2 rounded-full"
-              }`}
+              className={`${toggleColor
+                ? "border-2 shadow-blue-700 shadow-md border-blue-700 p-2 rounded-full"
+                : "border-2 shadow-blue-700 shadow-md border-blue-700 p-2 rounded-full"
+                }`}
               passHref
             >
               <button className="text-white bg-blue-700 flex justify-center w-10 h-10 items-center rounded-full">
@@ -159,11 +154,10 @@ const Home = () => {
 
             {/* Instagram Button */}
             <Link
-              className={`${
-                toggleColor
-                  ? "border-2 shadow-orange-700 shadow-md border-yellow-700 p-2 rounded-full"
-                  : "border-2 shadow-orange-700 shadow-md border-yellow-700 p-2 rounded-full"
-              }`}
+              className={`${toggleColor
+                ? "border-2 shadow-orange-700 shadow-md border-yellow-700 p-2 rounded-full"
+                : "border-2 shadow-orange-700 shadow-md border-yellow-700 p-2 rounded-full"
+                }`}
               href="https://www.instagram.com/your_instagram_username/"
               passHref
             >
@@ -175,22 +169,19 @@ const Home = () => {
         </div>
         <div className="relative " data-aos="zoom-out-right">
           <img
-            className={`  mt-20 lg:mt-0 lg:w-[500px] lg:h-[500px] h-[400px]  md:w-[350px] md:h-[350px]  ${
-              toggleColor
-                ? "bg-gradient-to-t from-info  via-success to-success profile border border-info"
-                : " lg:rounded-full rounded-2xl p-8  bg:white skill md:rounded-full"
-            }`}
-            src={`${
-              toggleColor
-                ? "https://dbaasltd.com/assets/img/what-we-deliver.gif"
-                : "https://dbaasltd.com/assets/img/what-we-deliver.gif"
-            } `}
+            className={`  mt-20 lg:mt-0 lg:w-[500px] lg:h-[500px] h-[400px]  md:w-[350px] md:h-[350px]  ${toggleColor
+              ? "bg-gradient-to-t from-info  via-success to-success profile border border-info"
+              : " lg:rounded-full rounded-2xl p-8  bg:white skill md:rounded-full"
+              }`}
+            src={`${toggleColor
+              ? "https://dbaasltd.com/assets/img/what-we-deliver.gif"
+              : "https://dbaasltd.com/assets/img/what-we-deliver.gif"
+              } `}
             alt=""
           />
           <div
-            className={`w-16 hidden lg:block  h-16 blur-sm absolute animate-move opacity-70   left-32  rounded-full  ${
-              toggleColor ? "bg-info" : "hidden"
-            } `}
+            className={`w-16 hidden lg:block  h-16 blur-sm absolute animate-move opacity-70   left-32  rounded-full  ${toggleColor ? "bg-info" : "hidden"
+              } `}
           ></div>
         </div>
       </div>

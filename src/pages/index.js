@@ -42,21 +42,19 @@ export default function Index() {
   return (
     <main className={`${toggleColor ? "bg-success" : "bg-neutral"} font-serif`}>
       <Home></Home>
-   <div className="lg:my-20">
-   <About></About>
-   </div>
+      <div className="lg:my-20">
+        <About></About>
+      </div>
       <Skills></Skills>
       <Education></Education>
       <div
-        className={`fixed bottom-4 z-50 right-8 ${
-          isVisible ? "block" : "hidden"
-        }`}
+        className={`fixed bottom-4 z-50 right-8 ${isVisible ? "block" : "hidden"
+          }`}
       >
         <button onClick={scrollToTop}>
           <FaArrowAltCircleUp
-            className={`h-16 w-16 ${
-              toggleColor ? "text-info" : "text-warning"
-            }  `}
+            className={`h-16 w-16 ${toggleColor ? "text-info" : "text-warning"
+              }  `}
           />
         </button>
       </div>

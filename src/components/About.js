@@ -1,163 +1,223 @@
+
+
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import { ToggleContext } from "@/pages/_app";
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { Element } from "react-scroll";
+import { motion } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  const { toggleColor, setToggleColor } = useContext(ToggleContext);
+  const { toggleColor } = useContext(ToggleContext);
+  const imageRef = useRef(null);
+  const titleRef = useRef(null);
+  const contentRef = useRef(null);
+  const infoRefs = useRef([]);
+
+  useEffect(() => {
+    // Set up GSAP animations
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#about",
+        start: "top 80%",
+        end: "bottom bottom",
+        toggleActions: "play none none reverse",
+      }
+    });
+
+    tl.fromTo(imageRef.current,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
+    );
+
+    tl.fromTo(titleRef.current,
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6, ease: "back.out(1.7)" },
+      "-=0.5"
+    );
+
+    tl.fromTo(contentRef.current,
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6 },
+      "-=0.4"
+    );
+
+    tl.fromTo(infoRefs.current,
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.1,
+        duration: 0.4,
+        ease: "power2.out"
+      },
+      "-=0.3"
+    );
+
+    // Clean up
+    return () => {
+      tl.kill();
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
+  // Animation variants for framer motion
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5 }
+    }
+  };
+
+  const floatingVariants = {
+    float: {
+      y: [0, -15, 0],
+      transition: {
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return (
     <Element name="about" id="about">
       <div
-        className={`px-10 ${
-          toggleColor ? "bg-success" : "bg-neutral"
-        } lg:px-20 font-serif mt-20 lg:flex md:flex md:px-10 md:space-x-8 md:items-center md:justify-center lg:mt-20 lg:pb-20 lg:space-x-16`}
+        className={`relative overflow-hidden min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 ${toggleColor ? "bg-success" : "bg-neutral"
+          }`}
       >
-        <div
-          className="relative w-full lg:w-1/3 mb-8 lg:mb-0"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        >
-          <div
-            className={`w-24 h-24 hidden lg:block blur-sm absolute opacity-70 left-80 top-4 rounded-xl  ${
-              toggleColor ? "bg-info" : "hidden"
-            }  animate-move`}
-          ></div>
-          <img
-            className={`${
-              toggleColor
-                ? "img-bo border-2  border-info  shadow-info shadow-md "
-                : " bg-white skill"
-            } shadow-2xl  rounded-full w-full lg:w-96 lg:h-96`}
-            src="https://i.ibb.co/DY58q4d/Untitled-design-1-removebg-preview.png"
-            alt=""
-          />
-        </div>
-        <div
-          className={`w-full lg:w-1/2 md:w-full mx-auto ${
-            toggleColor
-              ? ""
-              : ""
-          }`} // Adjusted width for better responsiveness
-          data-aos="fade-down"
-          data-aos-duration="2000"
-        >
-          <h1
-            className={`lg:text-5xl  lg:mt-0 mt-20 text-3xl font-bold ${
-              toggleColor ? "text-info" : "text-success"
-            } text-center lg:text-left uppercase`}
-          >
-            About Me
-          </h1>
-          <p
-            className={`my-6 ${
-              toggleColor ? "text-white" : "text-success lg:text-lg"
-            }  lg:text-left text-justify `}
-          >
-            Greetings! I'm Mobarak Hossen, a skilled full-stack web developer
-            hailing from the vibrant landscapes of Bangladesh. Proficient in
-            both front-end and back-end technologies, I specialize in
-            transforming concepts into seamless, interactive web experiences.
-            Join me on this journey of turning ideas into reality through
-            innovative and efficient development. Let's build something
-            extraordinary together!
-          </p>
+        {/* Animated background elements */}
+        <div className="absolute top-20 -left-10 w-64 h-64 rounded-full bg-secondary/20 blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-10 -right-10 w-56 h-56 rounded-full bg-accent/20 blur-3xl animate-pulse-slow"></div>
 
-          <div className=" text-left">
-            <p
-              className={` ${
-                toggleColor ? "text-info" : "text-success"
-              } text-lg`}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Image with floating animation */}
+          <motion.div
+            ref={imageRef}
+            className="relative flex justify-center"
+            variants={floatingVariants}
+            animate="float"
+          >
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+              <div className="absolute inset-0 rounded-full overflow-hidden border-4 border-white/30 shadow-2xl">
+                <img
+                  className="w-full h-full object-cover"
+                  src="https://i.ibb.co/DY58q4d/Untitled-design-1-removebg-preview.png"
+                  alt="Mobarak Hossen"
+                />
+              </div>
+
+              {/* Decorative elements */}
+              <motion.div
+                className="absolute -top-4 -right-4 w-16 h-16 rounded-full bg-info/20 backdrop-blur-sm"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.8, duration: 0.5 }}
+              />
+
+              <motion.div
+                className="absolute -bottom-6 -left-6 w-24 h-24 rounded-full bg-warning/20 backdrop-blur-sm"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 1, duration: 0.5 }}
+              />
+
+              <motion.div
+                className="absolute top-1/2 -right-10 w-12 h-12 rounded-lg bg-accent/20 backdrop-blur-sm rotate-45"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 1.2, duration: 0.5 }}
+              />
+            </div>
+          </motion.div>
+
+          {/* Content */}
+          <div className="space-y-8">
+            <motion.h1
+              ref={titleRef}
+              className={`text-4xl md:text-5xl font-bold ${toggleColor ? "text-info" : "text-success"
+                }`}
             >
-              Name:
-              <span
-                className={` ${
-                  toggleColor ? "text-white" : "text-accent"
-                } text-base`}
-              >
-                Mohammad Mobarak Hossen
-              </span>
-            </p>
-            <p
-              className={` ${
-                toggleColor ? "text-info" : "text-success"
-              } text-lg`}
+              About <span className="text-accent">Me</span>
+            </motion.h1>
+
+            <motion.p
+              ref={contentRef}
+              className={`text-lg leading-relaxed ${toggleColor ? "text-white" : "text-success"
+                }`}
             >
-              Birthdate:
-              <span
-                className={` ${
-                  toggleColor ? "text-white" : "text-accent"
-                } text-base`}
-              >
-                10-05-2000
-              </span>
-            </p>
-            <p
-              className={` ${
-                toggleColor ? "text-info" : "text-success"
-              } text-lg`}
+              Greetings! I'm Mobarak Hossen, a skilled full-stack web developer
+              hailing from the vibrant landscapes of Bangladesh. Proficient in
+              both front-end and back-end technologies, I specialize in
+              transforming concepts into seamless, interactive web experiences.
+              Join me on this journey of turning ideas into reality through
+              innovative and efficient development. Let's build something
+              extraordinary together!
+            </motion.p>
+
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 gap-4"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
             >
-              Languages:
-              <span
-                className={` ${
-                  toggleColor ? "text-white" : "text-accent"
-                } text-base`}
-              >
-                {" "}
-                English/Bengali
-              </span>
-            </p>
-            <p
-              className={` ${
-                toggleColor ? "text-info" : "text-success"
-              } text-lg`}
-            >
-              Address:
-              <span
-                className={` ${
-                  toggleColor ? "text-white" : "text-accent"
-                } text-base`}
-              >
-                Bangladesh, Chittagong
-              </span>
-            </p>
-            <p
-              className={` ${
-                toggleColor ? "text-info" : "text-success"
-              } text-lg`}
-            >
-              Email:
-              <span
-                className={` ${
-                  toggleColor ? "text-white" : "text-accent"
-                } text-base`}
-              >
-                Riponbhai782@gmail.com
-              </span>
-            </p>
-            <p
-              className={` ${
-                toggleColor ? "text-info" : "text-success"
-              } text-lg`}
-            >
-              Phone:
-              <span
-                className={` ${
-                  toggleColor ? "text-white" : "text-accent"
-                } text-base`}
-              >
-                {" "}
-                +8801825639631
-              </span>
-            </p>
+              {[
+                { label: "Name:", value: "Mohammad Mobarak Hossen" },
+                { label: "Birthdate:", value: "10-05-2000" },
+                { label: "Languages:", value: "English/Bengali" },
+                { label: "Address:", value: "Bangladesh, Chittagong" },
+                { label: "Email:", value: "Riponbhai782@gmail.com" },
+                { label: "Phone:", value: "+8801825639631" },
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  ref={el => infoRefs.current[index] = el}
+                  className="flex items-start"
+                  variants={itemVariants}
+                >
+                  <span className={`font-semibold min-w-[100px] ${toggleColor ? "text-info" : "text-success"}`}>
+                    {item.label}
+                  </span>
+                  <span className={`${toggleColor ? "text-white" : "text-accent"}`}>
+                    {item.value}
+                  </span>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Decorative animated elements */}
+            <motion.div
+              className="absolute top-20 right-10 w-16 h-16 rounded-full bg-info/20 backdrop-blur-sm"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 1.5, duration: 0.5 }}
+            />
+
+            <motion.div
+              className="absolute bottom-20 left-10 w-24 h-24 rounded-lg bg-warning/20 backdrop-blur-sm -rotate-12"
+              initial={{ scale: 0, rotate: 0 }}
+              animate={{ scale: 1, rotate: -12 }}
+              transition={{ delay: 1.8, duration: 0.7 }}
+            />
           </div>
-        </div>
-        <div className="relative hidden lg:block">
-          <div
-            className={`w-32 h-32 blur-sm absolute bottom-0 animate-move right-10 opacity-70 rounded-xl ${
-              toggleColor ? "bg-info" : "hidden"
-            }`}
-          ></div>
         </div>
       </div>
     </Element>
