@@ -1,3 +1,6 @@
+// "use client";
+import React from 'react'; // ✅ okay
+
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Education from "@/components/Education";

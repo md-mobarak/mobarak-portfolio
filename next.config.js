@@ -4,18 +4,18 @@ const nextConfig = {
   images: {
     domains: [
       'img.freepik.com',
+      "encrypted-tbn0.gstatic.com",
+      "images04.nicepage.com",
+      "www.freepik.com",
       'html.pixelfit.agency',
-      "as1.ftcdn.net",
-      "as1.ftcdn.net",
+      'as1.ftcdn.net',
       'res.cloudinary.com',
       'via.placeholder.com',
       'example.com',
-      "cdn-oubd.s3.ap-southeast-1.amazonaws.com",
-      "oneummahbd.shop",
+      'cdn-oubd.s3.ap-southeast-1.amazonaws.com',
+      'oneummahbd.shop',
       'i.ibb.co'
     ],
   },
-
-}
-
-export default nextConfig
+};
+module.exports = nextConfig;

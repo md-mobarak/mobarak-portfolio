@@ -33,14 +33,15 @@ const Home = () => {
   }, [index, currentText]);
   const handleDownload = () => {
     // Replace this link with the direct link to your CV file
-    const cvLink =
-      "https://drive.google.com/file/d/1ABgoj6hnm2LfbTV6x18UHpLqE_F_Bbuu/view?usp=sharing";
+    // const cvLink =
+    //   "https://drive.google.com/file/d/1CFHiBNSwu_5BHpoo5L9sEWmbVueGNSUP/view?usp=sharing";
 
+    window.open('https://drive.google.com/file/d/1CFHiBNSwu_5BHpoo5L9sEWmbVueGNSUP/view?usp=sharing', '_blank');
     // Create an invisible link element
     const downloadLink = document.createElement("a");
 
     // Set the link's href to the direct link of the file
-    downloadLink.href = cvLink;
+    // downloadLink.href = cvLink;
 
     // Set the download attribute to specify the file name
     downloadLink.download = "Your_CV.pdf";
@@ -102,6 +103,8 @@ const Home = () => {
           </div>
           <button
             onClick={handleDownload}
+            target="_blank"
+            rel="noopener noreferrer"
             className={`btn  ${toggleColor
               ? " btn-success rounded-full border-2 border-info text-info uppercase shadow-info shadow-2xl "
               : " rounded-full bg-[#FFFFFF] border border-success  text-success uppercase shadow-2xl"

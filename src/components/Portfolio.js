@@ -284,24 +284,34 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: "Vehicle Management",
+      title: "Vehicle Management Services Platform",
       imageUrl: "https://img.freepik.com/free-vector/user-panel-template-infographic-dashboard_23-2148378206.jpg",
       description: "A comprehensive system for managing vehicle fleets, maintenance schedules, and driver assignments",
       githubClientUrl: "https://github.com/md-mobarak/vehicle_management_system_client",
       githubServerUrl: "https://github.com/md-mobarak/vehicle_management_system_server",
       siteUrl: "https://vehicle-management-frontend-seven.vercel.app/login",
       modalImg: "https://img.freepik.com/free-vector/user-panel-template-infographic-dashboard_23-2148378206.jpg",
-      tags: ["React", "Node.js", "MongoDB", "Express"]
+      tags: ["React", "Node.js", "MongoDB", "Express", "Typescript", "Prisma", "Redux"]
     },
     {
-      title: "Painting Services",
+      title: "Arabian Elegance–E-Commerce Platform",
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa2MBfhJFFY6fi8_OGM_6TmKY6sbsa2FVNcg&s",
+      description: "A full-stack, scalable, and role-based (Admin, Manager, User) e-commerce platform with GSAP-enhanced UI/UX. Features include advanced product filtering, dashboard analytics, order & user management.",
+      githubClientUrl: "https://github.com/md-mobarak/Arabian_eleganceBD_client",
+      githubServerUrl: "https://github.com/md-mobarak/arabian-elegance-backend2",
+      siteUrl: "https://arabian-elegance-client.vercel.app/",
+      modalImg: "https://images04.nicepage.com/feature/612016/ecommerce-websites.jpg",
+      tags: ["Next js", "Node.js", "MongoDB", "Express", "Mongoose", "Typescript", "Prisma", "React Query"]
+    },
+    {
+      title: "Painting Services Services Platform",
       imageUrl: "https://img.freepik.com/free-photo/young-builder-man-construction-uniform-safety-helmet-holding-paint-roller-looking-front-happy-positive-showing-thumbs-up-standing-green-wall_141793-64931.jpg",
       description: "Platform connecting customers with professional painting services for homes and businesses",
       githubClientUrl: "https://github.com/md-mobarak/painting-cilents",
       githubServerUrl: "https://github.com/md-mobarak/painting-server",
       siteUrl: "https://painting-client-9.vercel.app/",
       modalImg: "https://img.freepik.com/premium-photo/plaster-painter-is-ready-paint-wall-hands-roller-brush-stepladder-bucket-paint-background_102577-138.jpg",
-      tags: ["Next.js", "Firebase", "Tailwind CSS"]
+      tags: ["Next.js", "Firebase", "Tailwind CSS", "PostgreSQL", "Prisma", "Redux", "Typescript"]
     },
     {
       title: "Book Catalogs",
@@ -313,16 +323,7 @@ const Portfolio = () => {
       modalImg: "https://img.freepik.com/free-vector/modern-library-with-bookshelf-illustration_1262-16576.jpg",
       tags: ["React", "Redux", "API Integration"]
     },
-    {
-      title: "Designer Portfolio",
-      imageUrl: "https://img.freepik.com/premium-psd/personal-portfolio-template_215790-16.jpg",
-      description: "Showcase portfolio for creative designers to display their work and attract clients",
-      githubClientUrl: "https://github.com/md-mobarak/next.js_explore_with_portfolio",
-      githubServerUrl: "https://github.com/md-mobarak/next.js_explore_with_portfolio",
-      siteUrl: "https://next-js-explore-with-portfolio.vercel.app/",
-      modalImg: "https://img.freepik.com/premium-psd/photography-online-course-landing-page-website-template-dark-mode_294843-76.jpg",
-      tags: ["Next.js", "GSAP", "Framer Motion"]
-    },
+
     {
       title: "Vape Store",
       imageUrl: "https://img.freepik.com/premium-photo/electronic-cigarette-background-vape-shop-e-cigarette-vaping-popular-vape-devices_572664-35.jpg",
@@ -406,8 +407,8 @@ const Portfolio = () => {
                 key={index}
                 ref={el => cardsRef.current[index] = el}
                 className={`group relative rounded-2xl overflow-hidden ${toggleColor
-                    ? "bg-gradient-to-br from-success/10 to-info/10 border border-info/30"
-                    : "bg-white border border-accent/30"
+                  ? "bg-gradient-to-br from-success/10 to-info/10 border border-info/30"
+                  : "bg-white border border-accent/30"
                   } shadow-xl hover:shadow-2xl transition-all duration-500`}
                 whileHover={{ y: -10 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -429,8 +430,8 @@ const Portfolio = () => {
                       <span
                         key={i}
                         className={`text-xs px-2 py-1 rounded-full ${toggleColor
-                            ? "bg-info/20 text-info"
-                            : "bg-accent/20 text-accent"
+                          ? "bg-info/20 text-info"
+                          : "bg-accent/20 text-accent"
                           }`}
                       >
                         {tag}
@@ -445,7 +446,7 @@ const Portfolio = () => {
 
                   <p className={`text-sm mb-4 ${toggleColor ? "text-neutral-300" : "text-success/80"
                     }`}>
-                    {project.description}
+                    {project.description.slice(0, 40)}...
                   </p>
 
                   <div className="flex space-x-3 mt-6">
@@ -454,8 +455,8 @@ const Portfolio = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`flex-1 text-center py-2 px-4 rounded-full text-xs font-medium transition-all ${toggleColor
-                          ? "bg-info/10 text-info hover:bg-info/20"
-                          : "bg-accent/10 text-accent hover:bg-accent/20"
+                        ? "bg-info/10 text-info hover:bg-info/20"
+                        : "bg-accent/10 text-accent hover:bg-accent/20"
                         }`}
                     >
                       Client
@@ -465,8 +466,8 @@ const Portfolio = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`flex-1 text-center py-2 px-4 rounded-full text-xs font-medium transition-all ${toggleColor
-                          ? "bg-info/10 text-info hover:bg-info/20"
-                          : "bg-accent/10 text-accent hover:bg-accent/20"
+                        ? "bg-info/10 text-info hover:bg-info/20"
+                        : "bg-accent/10 text-accent hover:bg-accent/20"
                         }`}
                     >
                       Server
@@ -476,8 +477,8 @@ const Portfolio = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`flex-1 text-center py-2 px-4 rounded-full text-xs font-medium transition-all ${toggleColor
-                          ? "bg-secondary text-success hover:bg-secondary/90"
-                          : "bg-success text-white hover:bg-success/90"
+                        ? "bg-secondary text-success hover:bg-secondary/90"
+                        : "bg-success text-white hover:bg-success/90"
                         }`}
                     >
                       Live Site
@@ -490,8 +491,8 @@ const Portfolio = () => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className={`absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center ${toggleColor
-                      ? "bg-info/90 text-white"
-                      : "bg-accent/90 text-white"
+                    ? "bg-info/90 text-white"
+                    : "bg-accent/90 text-white"
                     } shadow-lg`}
                   onClick={() => document.getElementById(`my_modal_${index}`).showModal()}
                 >
@@ -577,8 +578,8 @@ const Portfolio = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={`inline-block px-8 py-3 rounded-full font-medium ${toggleColor
-                ? "bg-gradient-to-r from-info to-secondary text-success hover:from-info/90 hover:to-secondary/90"
-                : "bg-gradient-to-r from-accent to-success text-white hover:from-accent/90 hover:to-success/90"
+              ? "bg-gradient-to-r from-info to-secondary text-success hover:from-info/90 hover:to-secondary/90"
+              : "bg-gradient-to-r from-accent to-success text-white hover:from-accent/90 hover:to-success/90"
               } shadow-lg`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
